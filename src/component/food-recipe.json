@@ -1,0 +1,31 @@
+[
+  {
+    "id": 1,
+    "recipe": "Egusi soup",
+    "ingredient": "egusi powder, palm oil, maggi, salt, crayfish, water",
+    "Instructions": "make the egusi powder into a paste with water, pour the oil into a pot ",
+    "category": "Soup"
+  },
+  {
+    "id": 2,
+    "recipe": "okro soup",
+    "ingredient": "grated okro, palm oil, maggi, salt, crayfish, water",
+    "Instructions": "pour the grated okro inside boiling water, pour the oil into a pot ",
+    "category": "Soup"
+  },
+  {
+    "id": 3,
+    "recipe": "poundo",
+    "ingredient": "poundo powder, water",
+    "Instructions": "make the poundo powder into a paste with water, pour in boil water",
+    "category": "swallow"
+  },
+
+  {
+    "id": 4,
+    "recipe": "jollof rice",
+    "ingredient": "rice, tin tomato, grounded pepper, groundnut oil, maggi, salt, bailleaf, curry, thyme, water",
+    "Instructions": "into a paste with water, pour the oil into a pot ",
+    "category": "dish"
+  }
+]
