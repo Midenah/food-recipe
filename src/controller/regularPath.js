@@ -1,12 +1,12 @@
-const {schema} = require("../component/auth.js");
-const fs = require("fs");
-const path = require("path");
+const { schema } = require('../component/auth.js');
+const fs = require('fs');
+const path = require('path');
 
 let recipes = [];
 
-const filePath = path.join(__dirname, "../component/food-recipe.json");
+const filePath = path.join(__dirname, '../component/food-recipe.json');
 
-fs.readFile(filePath, "utf-8", function (err, data) {
+fs.readFile(filePath, 'utf-8', function (err, data) {
   try {
     if (data) {
       recipes = JSON.parse(data);
@@ -20,12 +20,12 @@ fs.readFile(filePath, "utf-8", function (err, data) {
 
 const regularUser = async (req, res, next) => {
   const { username, password } = req.body;
-  const result = await schema.validateAsync({username, password})
+  const result = await schema.validateAsync({ username, password });
   // Authenticate user
   if (result) {
-     res.status(200).send( recipes );
+    res.status(200).send(recipes);
   } else {
-    res.status(401).json({ message: "Authentication failed" });
+    res.status(401).json({ message: 'Authentication failed' });
   }
 };
 
