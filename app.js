@@ -23,4 +23,5 @@ app.use('/api/users', userRoutes);
 
 app.listen(config.port, () => {
   console.log(`Server running on ${config.serverURL}`);
+  console.log(`API documentation available at ${config.serverURL}/api-docs`);
 });
