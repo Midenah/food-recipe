@@ -1,7 +1,7 @@
-const User = require('../models/User');
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
-const config = require('../config');
+const User = require("../models/User");
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcryptjs");
+const config = require("../config");
 
 // Register new user
 exports.registerUser = async (req, res) => {
@@ -13,7 +13,7 @@ exports.registerUser = async (req, res) => {
     });
     if (userExists)
       return res.status(400).json({
-        message: 'User already exists',
+        message: "User already exists",
       });
 
     const user = new User({
@@ -34,7 +34,7 @@ exports.registerUser = async (req, res) => {
       },
       config.jwtSecret,
       {
-        expiresIn: '3d',
+        expiresIn: "3d",
       }
     );
 
@@ -49,7 +49,7 @@ exports.registerUser = async (req, res) => {
     });
   } catch (error) {
     res.status(500).json({
-      message: 'Server error',
+      message: "Server error",
       error,
     });
   }
@@ -65,13 +65,13 @@ exports.loginUser = async (req, res) => {
     });
     if (!user)
       return res.status(400).json({
-        message: 'Invalid credentials',
+        message: "Invalid credentials",
       });
 
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch)
       return res.status(400).json({
-        message: 'Invalid credentials',
+        message: "Invalid credentials",
       });
 
     const token = jwt.sign(
@@ -80,7 +80,7 @@ exports.loginUser = async (req, res) => {
       },
       config.jwtSecret,
       {
-        expiresIn: '3d',
+        expiresIn: "3d",
       }
     );
 
@@ -95,7 +95,7 @@ exports.loginUser = async (req, res) => {
     });
   } catch (error) {
     res.status(500).json({
-      message: 'Server error',
+      message: "Server error",
       error,
     });
   }
